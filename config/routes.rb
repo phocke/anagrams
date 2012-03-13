@@ -2,7 +2,11 @@ Vzaar::Application.routes.draw do
 
   root :to => 'anagrams#index'
 
-  resources :anagrams
+  resources :anagrams do
+    collection do
+      post 'upload'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

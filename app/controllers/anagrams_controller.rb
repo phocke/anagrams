@@ -8,24 +8,15 @@ class AnagramsController < ApplicationController
     @anagram = Anagram.find(params[:id])
   end
 
-  def new
-    @anagrams = Anagram.new
-  end
+  def upload
 
-  def create
-    @anagrams = handle_file(params[:anagram])
-
-    if @anagrams.save
+    if Anagram.handle_upload(params[:anagrams][:anagrams_file])
       flash[:notice] = "Anagrams created"
-      render action: "index"
+      redirect_to anagrams_path
     else
+      flash[:notice] = "Something's wrog with your file"
       render action: "new" 
     end
   end
 
-  private
-
-  def handle_file(params)
-
-  end
 end
