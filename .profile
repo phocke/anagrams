@@ -1,0 +1,1 @@
+PATH=/Users/przemek/.rvm/gems/ruby-1.8.7-p352/bin:/Users/przemek/.rvm/gems/ruby-1.8.7-p352@global/bin:/Users/przemek/.rvm/rubies/ruby-1.8.7-p352/bin:/Users/przemek/.rvm/bin:/Users/przemek/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Library/PostgreSQL/9.0/bin:/Users/przemek/.bin:/usr/local/ActivePerl-5.12/bin
