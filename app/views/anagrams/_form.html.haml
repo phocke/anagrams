@@ -1,0 +1,10 @@
+
+= simple_form_for(@anagrams, html: {class: 'form-vertical', multipart: true}) do |form|
+  - if @anagrams.errors.any?
+    #error_explanation
+      %h2 #{pluralize(@anagram.errors.count, "error")} prohibited this anagram from being saved:
+      %ul
+        - @anagrams.errors.full_messages.each do |msg|
+          %li= msg
+  = form.file_field 'anagram_file'
+  = form.submit
