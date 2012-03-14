@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lib/jquery.tmpl.min
 //= require lib/bootstrap
 //= require_tree .

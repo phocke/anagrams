@@ -3,9 +3,11 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
+  $.template('anagram', $('#anagram-template'))
+  
   $('#search').submit ->
     $.get(
       $(@).attr('action')
       $(@).serialize()
-      (data) -> console.log(data)
+      (anagramsJSON) -> $.tmpl( "anagram", anagramsJSON ).appendTo( "#anagrams" )
     )  
