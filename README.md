@@ -26,7 +26,9 @@ There are two approaches to count time of requests
 
 ## How to run it?
 
-    rake db:setup
+    rvm use 1.9.2
+    bundle
+    rake db:setup   
     rails s
     open browser and type in "localhost:3000" in your address bar
     upload dictionary file
