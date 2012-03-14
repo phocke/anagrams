@@ -5,6 +5,7 @@ Vzaar::Application.routes.draw do
   resources :anagrams do
     collection do
       post 'upload'
+      get 'search'
     end
   end
 

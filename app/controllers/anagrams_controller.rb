@@ -4,12 +4,12 @@ class AnagramsController < ApplicationController
     @anagrams = Anagram.all
   end
 
-  def show
-    @anagram = Anagram.find(params[:id])
+  def search
+    @anagrams = Anagram.find_all_by_sorted_word params[:anagram][:word].sorted
+    render json: @anagrams
   end
 
   def upload
-
     if Anagram.handle_upload(params[:anagrams][:anagrams_file])
       flash[:notice] = "Anagrams created"
       redirect_to anagrams_path
