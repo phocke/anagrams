@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120313194933) do
+ActiveRecord::Schema.define(:version => 20120314144045) do
 
   create_table "anagrams", :force => true do |t|
     t.string   "word"
@@ -19,5 +19,7 @@ ActiveRecord::Schema.define(:version => 20120313194933) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  add_index "anagrams", ["sorted_word"], :name => "index_anagrams_on_sorted_word"
 
 end
