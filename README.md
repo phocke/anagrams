@@ -6,9 +6,15 @@ It's definitely not bulletproof, nor complete, but it works, and finds anagrams 
 ## Performance
 
 There are two very simple optimizations I've used:  
+
+
 - search anagrams by their letters sorted alphabetically  
-      examples =>  (bat -> abt , tab -> abt)  
+  ```ruby
+    examples =>  (bat -> abt , tab -> abt)
+  ```
+        
 - add index on sorted_word column (which stores the words transformed as above)  
+
 
 ## Time counting
 
