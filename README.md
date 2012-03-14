@@ -33,7 +33,10 @@ There are two approaches to count time of requests
     open browser and type in "localhost:3000" in your address bar
     upload dictionary file
 
+You can find sample file with anagrams in db/anagrams.txt
+
 ## Gotchas
 
   Files should be encoded it UTF-8. Application fails(gracefully) with latin encoding. Perhaphs with others as well ...  
   Application uses Ruby MRI 1.9.2-p290
+
