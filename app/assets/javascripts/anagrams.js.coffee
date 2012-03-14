@@ -22,7 +22,9 @@ $ ->
         $.tmpl( "anagram", anagramsJSON ).prependTo( "#anagrams" )
         $('#anagram_word').val('')
       )
-    ) 
+    )
+
+    false
 
 
 
