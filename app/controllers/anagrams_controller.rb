@@ -6,10 +6,9 @@ class AnagramsController < ApplicationController
   def search
     @anagrams = Anagram.find_all_by_sorted_word params[:anagram][:word].sorted
     render json: {
-        dateTime: DateTime.now,
+        dateTime: Time.now.strftime("%Y-%m-%d %H:%M:%S"),
         anagramsLength: @anagrams.length,
         word: params[:anagram][:word],
-        time: 0,
         anagrams: @anagrams.collect(&:word).join(', ')
       }
   end
