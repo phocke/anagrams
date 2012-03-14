@@ -12,4 +12,5 @@
 /tmp
 
 #Ignore uploads
-/public/uploads
+/public/uploads/*
+!/public/uploads/.gitkeep
