@@ -1,4 +1,4 @@
 
-= simple_form_for(:anagrams, url: '/anagrams/upload', html: {class: 'form-vertical', multipart: true}) do |form|
+= simple_form_for(:anagrams, url: '/anagrams/upload', html: {class: 'form-inline well', multipart: true}) do |form|
   = form.file_field 'anagrams_file'
-  = form.submit 'Load dictionary'
+  = form.submit 'Load dictionary', class: "btn btn-success"

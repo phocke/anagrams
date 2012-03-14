@@ -1,5 +1,6 @@
 #anagram-template
-
-  %p ${dateTime}
-  %p ${anagramsLength} anagrams found for '${word}' in ${time}ms
-  %p > ${anagrams}
+  .alert.alert-info
+    %a.close{'data-dismiss' => "alert"} ×
+    %p ${dateTime}
+    %p ${anagramsLength} anagrams found for '${word}' in ${time}ms
+    %p > ${anagrams}

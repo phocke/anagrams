@@ -2,13 +2,15 @@
   = render partial: 'anagram'
 
 
-%h2 Anagrams finder
 
 =render :partial => 'form'
+%hr
 
+= simple_form_for(:anagram, url: '/anagrams/search', method: 'get', remote: true, html: {class: 'form-inline well', id: 'search'}) do |form|
+  .input-prepend.input-append
+    = form.input :word, :wrapper => :prepend, :label => false, html: {class: 'span1' } do
+      %span.add-on Name 
+      = form.input_field :word 
+      = form.submit "find anagrams", class: "btn btn-primary btn- inline"
 
-= simple_form_for(:anagram, url: '/anagrams/search', method: 'get', remote: true, html: {class: 'form-vertical', id: 'search'}) do |form|
-  = form.text_field :word
-  = form.submit "find anagrams"
-
-#anagrams
+  #anagrams
