@@ -1,8 +1,9 @@
+= content_for :templates do
+  = render partial: 'anagram'
+
+
 %h2 Anagrams finder
 
--Anagram.all.each do |an|
-  = an.word + " " + an.sorted_word
-  %br/
 =render :partial => 'form'
 
 
@@ -10,4 +11,4 @@
   = form.text_field :word
   = form.submit "find anagrams"
 
-.anagrams
+#anagrams

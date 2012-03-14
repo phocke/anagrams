@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title Vzaar
+    = stylesheet_link_tag :application, :media => "all"
+    = javascript_include_tag :application
+    = csrf_meta_tags
+  %body
+    #templates{style: 'display: none;'}
+      = yield :templates
+
+    #container.container
+      %header
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+      #main{:role => "main"}
+        = yield
+      %footer
