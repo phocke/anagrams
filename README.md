@@ -33,4 +33,5 @@ There are two approaches to count time of requests
 
 ## Gotchas
 
-  Files should be encoded it UTF-8. Application fails(gracefully) with latin encoding. Perhaphs with others as well ...
+  Files should be encoded it UTF-8. Application fails(gracefully) with latin encoding. Perhaphs with others as well ...  
+  Application uses Ruby MRI 1.9.2-p290
