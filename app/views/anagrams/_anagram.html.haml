@@ -3,4 +3,6 @@
     %a.close{'data-dismiss' => "alert"} ×
     %p ${dateTime}
     %p ${anagramsLength} anagrams found for '${word}' in ${time}ms
+    {{if anagrams}} 
     %p > ${anagrams}
+    {{/if anagrams}}
