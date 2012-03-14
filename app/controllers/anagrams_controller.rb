@@ -15,17 +15,16 @@ class AnagramsController < ApplicationController
 
   def upload
     before = Time.now
-    anagrams_file = params[:anagrams][:anagrams_file]
+    anagrams_file = params[:anagrams].try(:[], :anagrams_file)
 
     if Anagram.handle_upload(anagrams_file)
       time = (1000 * (Time.now - before) ).to_i
       
       flash[:notice] = "#{anagrams_file.original_filename} loaded in #{time} ms"
-      redirect_to anagrams_path
     else
-      flash[:notice] = "Something's wrog with your file"
-      render action: "new" 
+      flash[:notice] = "Something's wrong with your file (perhaps encoding or it's just blank)" 
     end
+    redirect_to anagrams_path
   end
 
 end
