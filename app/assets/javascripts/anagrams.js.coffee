@@ -4,10 +4,25 @@
 
 $ ->
   $.template('anagram', $('#anagram-template'))
+
   
+
+  countTime = (before, after) -> 
+    period = after - before 
+
+
   $('#search').submit ->
+    before = new Date
+
     $.get(
       $(@).attr('action')
       $(@).serialize()
-      (anagramsJSON) -> $.tmpl( "anagram", anagramsJSON ).appendTo( "#anagrams" )
-    )  
+      (anagramsJSON) -> (
+        anagramsJSON['time'] = countTime(before, new Date ) 
+        $.tmpl( "anagram", anagramsJSON ).prependTo( "#anagrams" )
+        $('#anagram_word').val('')
+      )
+    ) 
+
+
+
