@@ -9,10 +9,10 @@ There are two very simple optimizations I've used:
 
 
 - search anagrams by their letters sorted alphabetically  
-  ```ruby
-    examples =>  (bat -> abt , tab -> abt)
   ```
-        
+    (bat -> abt , tab -> abt, tender -> deenrt, love -> elov)
+  ```
+
 - add index on sorted_word column (which stores the words transformed as above)  
 
 
