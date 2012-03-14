@@ -4,5 +4,6 @@
     %p ${dateTime}
     %p ${anagramsLength} anagrams found for '${word}' in ${time}ms
     {{if anagrams}} 
-    %p > ${anagrams}
+    %p 
+      %strong > ${anagrams}
     {{/if anagrams}}
