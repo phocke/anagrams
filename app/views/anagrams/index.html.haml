@@ -6,7 +6,7 @@
 =render :partial => 'form'
 
 
-= simple_form_for(:anagram, url: '/anagrams/search', method: 'get', html: {class: 'form-vertical'}) do |form|
+= simple_form_for(:anagram, url: '/anagrams/search', method: 'get', remote: true, html: {class: 'form-vertical', id: 'search'}) do |form|
   = form.text_field :word
   = form.submit "find anagrams"
 
