@@ -20,7 +20,7 @@ class AnagramsController < ApplicationController
     if Anagram.handle_upload(anagrams_file)
       time = (1000 * (Time.now - before) ).to_i
       
-      flash[:notice] = "#{anagrams_file.original_filename} loaded in #{time} ms"
+      flash[:success] = "#{anagrams_file.original_filename} loaded in #{time} ms"
     else
       flash[:notice] = "Something's wrong with your file (perhaps encoding or it's just blank)" 
     end
