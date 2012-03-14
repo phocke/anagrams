@@ -1,0 +1,13 @@
+%h2 Anagrams finder
+
+-Anagram.all.each do |an|
+  = an.word + " " + an.sorted_word
+  %br/
+=render :partial => 'form'
+
+
+= simple_form_for(:anagram, url: '/anagrams/search', method: 'get', html: {class: 'form-vertical'}) do |form|
+  = form.text_field :word
+  = form.submit "find anagrams"
+
+.anagrams
