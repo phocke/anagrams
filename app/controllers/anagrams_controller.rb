@@ -1,7 +1,6 @@
 class AnagramsController < ApplicationController
 
   def index
-    @anagrams = Anagram.all
   end
 
   def search
@@ -16,8 +15,13 @@ class AnagramsController < ApplicationController
   end
 
   def upload
-    if Anagram.handle_upload(params[:anagrams][:anagrams_file])
-      flash[:notice] = "Anagrams created"
+    before = Time.now
+    anagrams_file = params[:anagrams][:anagrams_file]
+
+    if Anagram.handle_upload(anagrams_file)
+      time = (1000 * (Time.now - before) ).to_i
+      
+      flash[:notice] = "#{anagrams_file.original_filename} loaded in #{time} ms"
       redirect_to anagrams_path
     else
       flash[:notice] = "Something's wrog with your file"
